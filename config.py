@@ -1,4 +1,4 @@
-FEATURE_MATRIX_PATH = 'data/sparse_user_features.npz'
+FEATURE_MATRIX_PATH = 'sparse_user_features.npz'
 USER_COURSE_VIEWS_PATH = 'data/user_course_views.csv'
 COURSE_TAGS_PATH = 'data/course_tags.csv'
 USER_INTERESTS_PATH = 'data/user_interests.csv'

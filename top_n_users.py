@@ -1,6 +1,7 @@
 from flask import make_response, jsonify, request
 from flask.views import MethodView
 import numpy as np
+import os
 from scipy import sparse
 
 
@@ -30,7 +31,7 @@ class TopNUsersAPI(MethodView):
 
     def top_n_similar_users(self, user_handle, n=5):
         try:
-            feature_matrix = sparse.load_npz('data/sparse_user_features.npz')
+            feature_matrix = sparse.load_npz(os.path.join(os.path.dirname(__file__), 'sparse_user_features.npz'))
             feature_matrix = np.array(feature_matrix.todense())  # convert csr matrix to dense representation
         except Exception as e:
             print(f'ERROR: Unable to load feature matrix: {e}')
